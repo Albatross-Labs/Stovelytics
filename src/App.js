@@ -28,7 +28,7 @@ export default function App() {
     <div>
       <button onClick={fetchContent}>데이터 가져와줘</button>
 
-      <p>Hi I'm Minju</p> 
+      <p>Hi Stovelytics</p> 
       {contents.map((content)=>(
         <div style={{border: '2px solid gray'}} key={content.created}>
           <p>header: {content.header}</p>
