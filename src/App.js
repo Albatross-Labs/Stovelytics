@@ -14,7 +14,7 @@ export default function App() {
     await axios.get(`https://17fe9izmx3.execute-api.ap-northeast-2.amazonaws.com/prod`)
     .then(res=>{
       // console.log(res.data.body)
-      setContents(JSON.parse(res.data.body))
+      setContents(JSON.parse(res.data.body)[0])
     })
   )
   
