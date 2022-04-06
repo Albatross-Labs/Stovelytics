@@ -14,7 +14,7 @@ export default function App() {
     await axios.get(`https://17fe9izmx3.execute-api.ap-northeast-2.amazonaws.com/prod`)
     .then(res=>{
       // console.log(res.data.body)
-      setContents(JSON.parse(res.data.body))
+      setContents(JSON.parse(res.data.body)[0])
     })
   )
   
@@ -28,7 +28,7 @@ export default function App() {
     <div>
       <button onClick={fetchContent}>데이터 가져와줘</button>
 
-      <p>Hi I'm Minju</p> 
+      <p>Hi Stovelytics</p> 
       {contents.map((content)=>(
         <div style={{border: '2px solid gray'}} key={content.created}>
           <p>header: {content.header}</p>
