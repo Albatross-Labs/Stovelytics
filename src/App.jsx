@@ -5,6 +5,10 @@ import CommentDisplay from './section/CommentDisplay'
 import styled from "styled-components";
 
 const Sections = styled.div`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
   display: grid;
   height: 100vh;
   grid-template-rows: 0.1fr 0.9fr;
