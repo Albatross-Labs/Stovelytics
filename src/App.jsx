@@ -5,6 +5,7 @@ import CommentDisplay from './sections/CommentDisplay'
 import styled from "styled-components";
 import { DataProvider } from './contexts/DataContext';
 import { CacheProvider } from './contexts/CacheContext';
+import axios from 'axios';
 
 const Sections = styled.div`
   margin: 0;
@@ -27,11 +28,12 @@ export default function App() {
   const [comments, setComments] = useState([]);
 
   const fetchComments = async () => (
-    await axios.get(``)
+    await axios.get('https://yjdssur46d.execute-api.ap-northeast-2.amazonaws.com/prod')
     .then(res=>{
-      console.log(res.data.body)
-      setCache(res.data.body)
-      setComments(res.data.body)
+      const fetchData = JSON.parse(res.data.body)['Items']
+      console.log(fetchData)
+      setCache(fetchData)
+      setComments(fetchData)
     })
   )
 
