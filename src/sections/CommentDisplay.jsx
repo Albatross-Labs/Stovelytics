@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 const CommentDisplaySection = styled.div`
-  background-color: yellow;
+  // background-color: yellow;
   grid-area: CommentDisplaySection;
 `
 

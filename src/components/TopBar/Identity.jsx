@@ -23,7 +23,6 @@ const SiteSlogan = styled.div`
   width: 50%;
   height: 100%;
 `
-
 const Sitename = styled.div`
   position: absolute;
   height: 60%;

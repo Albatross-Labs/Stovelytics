@@ -8,6 +8,7 @@ const TopBarSection = styled.div`
   position: relative;
   background-color: #F3F2DB;
   grid-area: TopBarSection;
+  display: flex;
 `
 
 export default function Topbar() {

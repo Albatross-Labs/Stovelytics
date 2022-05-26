@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 const PeriodAnalysisSection = styled.div`
-  background-color: green;
+  // background-color: green;
   grid-area: PeriodAnalysisSection;
 `
 
