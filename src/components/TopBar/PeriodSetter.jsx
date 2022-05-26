@@ -34,7 +34,6 @@ const EndDateSet = styled.input`
 `
 
 export default function PeriodSetter() {
-
   
   return (
     <Wrapper>
