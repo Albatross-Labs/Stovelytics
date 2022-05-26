@@ -1,7 +1,7 @@
 import React from 'react'
-import Topbar from './section/Topbar'
-import PeriodAnalysis from './section/PeriodAnalysis'
-import CommentDisplay from './section/CommentDisplay'
+import Topbar from './sections/Topbar'
+import PeriodAnalysis from './sections/PeriodAnalysis'
+import CommentDisplay from './sections/CommentDisplay'
 import styled from "styled-components";
 
 const Sections = styled.div`
