@@ -5,8 +5,8 @@ import Identity from '../components/TopBar/Identity';
 import PeriodSetter from '../components/TopBar/PeriodSetter';
 
 const TopBarSection = styled.div`
-  background-color: red;
   position: relative;
+  background-color: #F3F2DB;
   grid-area: TopBarSection;
 `
 

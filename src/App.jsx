@@ -12,7 +12,7 @@ const Sections = styled.div`
   display: grid;
   height: 100vh;
   grid-template-rows: 0.1fr 0.9fr;
-  grid-template-columns: 0.55fr 0.45fr;
+  grid-template-columns: 0.6fr 0.4fr;
   grid-template-areas: 
     "TopBarSection TopBarSection"
     "PeriodAnalysisSection CommentDisplaySection"
