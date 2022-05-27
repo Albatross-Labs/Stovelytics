@@ -35,7 +35,13 @@ export default function App() {
     await axios.get('https://yjdssur46d.execute-api.ap-northeast-2.amazonaws.com/prod')
     .then(res=>{
       const fetchData = JSON.parse(res.data.body)['Items']
+      
       console.log(fetchData)
+      fetchData.sort(function(a,b){
+        return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; 
+      });
+      console.log(fetchData)
+      
       setCache(fetchData)
       setPeriod(fetchData)
       setComments(fetchData)
