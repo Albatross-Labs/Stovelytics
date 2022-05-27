@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
+
 import FilteredComments from '../components/CommentDisplay/FilteredComments';
 import LabelFilter from '../components/CommentDisplay/LabelFilter';
 
 const CommentDisplaySection = styled.div`
-  background-color: yellow;
+  position: relative;
+  height: 100%;
   grid-area: CommentDisplaySection;
 `
 
