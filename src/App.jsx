@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios';
+import styled from "styled-components";
+
 import Topbar from './sections/Topbar'
 import PeriodAnalysis from './sections/PeriodAnalysis'
 import CommentDisplay from './sections/CommentDisplay'
-import styled from "styled-components";
-import { DataProvider } from './contexts/DataContext';
+
+import { CommentsProvider } from './contexts/CommentsContext';
 import { CacheProvider } from './contexts/CacheContext';
-import axios from 'axios';
+import { PeriodProvider } from './contexts/PeriodContext';
 
 const Sections = styled.div`
   margin: 0;
@@ -25,6 +28,7 @@ const Sections = styled.div`
 export default function App() {
   
   const [cache, setCache] = useState([]);
+  const [period, setPeriod] = useState([]);
   const [comments, setComments] = useState([]);
 
   const fetchComments = async () => (
@@ -33,6 +37,7 @@ export default function App() {
       const fetchData = JSON.parse(res.data.body)['Items']
       console.log(fetchData)
       setCache(fetchData)
+      setPeriod(fetchData)
       setComments(fetchData)
     })
   )
@@ -43,13 +48,15 @@ export default function App() {
 
   return (
     <CacheProvider value={cache}>
-      <DataProvider value={[comments, setComments]}>
-        <Sections>
-          <Topbar/>
-          <PeriodAnalysis/>
-          <CommentDisplay/>
-        </Sections>
-      </DataProvider>
+      <PeriodProvider value={[period, setPeriod]}>
+        <CommentsProvider value={[comments, setComments]}>
+          <Sections>
+            <Topbar/>
+            <PeriodAnalysis/>
+            <CommentDisplay/>
+          </Sections>
+        </CommentsProvider>
+      </PeriodProvider>
     </CacheProvider>
   )
 }

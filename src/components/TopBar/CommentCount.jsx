@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components';
-import { DataContext } from '../../contexts/DataContext';
+import { CommentsContext } from '../../contexts/CommentsContext';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -24,7 +24,7 @@ const Counts = styled.div`
   border-radius: 40%
 `
 export default function CommentCount() {
-  const [comments] = useContext(DataContext);
+  const [comments] = useContext(CommentsContext);
 
   return (
     <Wrapper>

@@ -2,7 +2,8 @@ import React, { useState, useContext } from 'react'
 import styled from "styled-components";
 
 import { CacheContext } from '../../contexts/CacheContext';
-import { DataContext } from '../../contexts/DataContext';
+import { CommentsContext } from '../../contexts/CommentsContext';
+import { PeriodContext } from '../../contexts/PeriodContext';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -48,13 +49,14 @@ const ShowButton = styled.button`
 
 export default function PeriodSetter() {
   const cache = useContext(CacheContext)
-  const [comments, setComments] = useContext(DataContext)
+  const [period, setPeriod] = useContext(PeriodContext)
+  const [comments, setComments] = useContext(CommentsContext)
   
   const [startDate, setStartDate] = useState("")
   const [endDate, setEndDate] = useState("")
-  // console.log(cache)
   
-  const handleComments = () => {
+  const handlePeriod = () => {
+    setPeriod(cache.filter(comment => startDate < comment['created'] && comment['created'] < endDate ))
     setComments(cache.filter(comment => startDate < comment['created'] && comment['created'] < endDate ))
   }
 
@@ -74,7 +76,7 @@ export default function PeriodSetter() {
         onChange={(e)=>setEndDate(e.target.value)} 
         placeholder="End Date ex) 2022.05.15 22:00"
       />
-      <SetButton onClick={handleComments}>SET</SetButton>
+      <SetButton onClick={handlePeriod}>SET</SetButton>
       <ShowButton onClick={handleShow}>SHOW</ShowButton>
     </Wrapper>
   )
