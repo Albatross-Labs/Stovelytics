@@ -12,14 +12,14 @@ const Wrapper = styled.div`
 const Logo = styled.img`
   position: absolute;
   display: block;
-  width: auto;
+  width: 18%;
   height: 85%;
   left: 3%;
   border-radius: 50%;
 `
 const SiteSlogan = styled.div`
   position: relative;
-  left: 22%;
+  left: 24%;
   width: 50%;
   height: 100%;
 `
