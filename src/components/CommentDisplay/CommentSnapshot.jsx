@@ -19,9 +19,9 @@ export default function CommentSnapshot({comment}) {
         <p>Theme: {comment.theme}</p>
         <p>DA: {comment.da}</p>
         <p>Spam: {comment.spam}</p>
-        {comment.keywords.map(keyword => (
+        {/* {comment.keywords.map(keyword => (
            <p>{keyword}</p> 
-        ))}
+        ))} */}
 
       </div>
     </Wrapper>
