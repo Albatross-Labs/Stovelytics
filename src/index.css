@@ -1,5 +1,17 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+@font-face {
+  font-family: 'Holtwood';
+  src: url(./assets/HoltwoodOneSC-Regular.ttf);
 }
+
+@font-face {
+  font-family: 'kopub';
+  src: url(./assets/KoPubWorld\ Batang\ Medium.ttf);
+}
+
+* {
+  font-family: 'kopub';
+}
+
+/* * {
+  font-family: 'Holtwood';
+} */
