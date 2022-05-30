@@ -7,6 +7,8 @@ import CommentSnapshot from './CommentSnapshot';
 const Wrapper = styled.div `
   position: relative;
   width: 100%;
+  // height: auto;
+  // min-height: 75%;
   height: 80%;
   // background-color: blue;
 `
@@ -26,8 +28,8 @@ export default function FilteredComments() {
   return (
     <Wrapper>
       <CommentsList>
-        {comments.map(comment => (
-          <CommentSnapshot key={comment.key} comment={comment}/>
+        {comments.map((comment, idx) => (
+          <CommentSnapshot key={idx} comment={comment}/>
         ))}
       </CommentsList>
     </Wrapper>

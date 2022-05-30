@@ -5,6 +5,8 @@ const Button = styled.button`
   cursor: pointer;
   border: none;
   border-radius: 15%;
+  margin: 5px;
+
   background-color: #F0F0F0;
   color: #000000;
 
@@ -19,10 +21,10 @@ export default function LabelButton({title}) {
 
   return (
     <Button 
-      className={active? `active`: ``}
+      className={active? `label active`: ``}
       onClick={()=>{setActive(!active)}}
     >
-        {title}
+      {title}
     </Button>
   )
 }
