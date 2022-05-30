@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import LabelButton from './LabelFilter/LabelButton';
 
 const Wrapper = styled.div `
   position: absoulte;
@@ -11,7 +12,7 @@ const Wrapper = styled.div `
 export default function LabelFilter() {
   return (
     <Wrapper>
-      LabelFilter
+      <LabelButton title="건의"/>
     </Wrapper>
   )
 }
