@@ -5,6 +5,7 @@ const Wrapper = styled.div `
   border: 3px solid black;
   margin: 8px;
   padding-left: 14px;
+  overflow: hidden;
   // background-color: blue;
 `
 

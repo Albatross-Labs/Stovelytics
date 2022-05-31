@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
 import { CommentsContext } from '../../contexts/CommentsContext';
 import { PeriodContext } from '../../contexts/PeriodContext';
@@ -20,17 +20,19 @@ const Wrapper = styled.div `
   flex-direction: column;
   box-shadow: 0px 8px 8px -10px #111;
   // overflow-x: scroll;
+  padding-left: 14px;
+  box-sizing: border-box;
 `
 const SetButton = styled.button`
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10%;
+  top: 10%;
   z-index: 4;
 `
 const ShowButton = styled.button`
   position: absolute;
-  right: 0;
-  top: 15%;
+  right: 10%;
+  top: 25%;
   z-index: 4;
 `
 

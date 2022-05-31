@@ -70,10 +70,13 @@ export default function PeriodSetter() {
       <StartDateSet 
         onChange={(e)=>setStartDate(e.target.value)} 
         placeholder="Start Date ex) 2022.05.15 18:00"
+        // value={comments[0]['created']}
+
       />
       <EndDateSet 
         onChange={(e)=>setEndDate(e.target.value)} 
         placeholder="End Date ex) 2022.05.15 22:00"
+        // value={comments[comments.length-1]['created']}
       />
       <SetButton onClick={handlePeriod}>SET</SetButton>
       <ShowButton onClick={handleReset}>Reset</ShowButton>
