@@ -60,10 +60,9 @@ export default function PeriodSetter() {
     setComments(cache.filter(comment => startDate < comment['created'] && comment['created'] < endDate ))
   }
 
-  const handleShow = () => {
-    console.log("Start Date: ", startDate)
-    console.log("End Date: ",endDate)
-    console.log(comments)
+  const handleReset = () => {
+    setPeriod(cache)
+    setComments(cache)
   }
 
   return (
@@ -71,13 +70,16 @@ export default function PeriodSetter() {
       <StartDateSet 
         onChange={(e)=>setStartDate(e.target.value)} 
         placeholder="Start Date ex) 2022.05.15 18:00"
+        // value={comments[0]['created']}
+
       />
       <EndDateSet 
         onChange={(e)=>setEndDate(e.target.value)} 
         placeholder="End Date ex) 2022.05.15 22:00"
+        // value={comments[comments.length-1]['created']}
       />
       <SetButton onClick={handlePeriod}>SET</SetButton>
-      <ShowButton onClick={handleShow}>SHOW</ShowButton>
+      <ShowButton onClick={handleReset}>Reset</ShowButton>
     </Wrapper>
   )
 }

@@ -10,6 +10,8 @@ import { CommentsProvider } from './contexts/CommentsContext';
 import { CacheProvider } from './contexts/CacheContext';
 import { PeriodProvider } from './contexts/PeriodContext';
 
+import fetchData from '../second_data.json'
+
 const Sections = styled.div`
   margin: 0;
   padding: 0;
@@ -31,7 +33,7 @@ export default function App() {
   const [period, setPeriod] = useState([]);
   const [comments, setComments] = useState([]);
 
-  const fetchComments = async () => (
+  const fetchComments = async () => {
     await axios.get('https://yjdssur46d.execute-api.ap-northeast-2.amazonaws.com/prod')
     .then(res=>{
       const fetchData = JSON.parse(res.data.body)['Items']
@@ -46,10 +48,21 @@ export default function App() {
       setPeriod(fetchData)
       setComments(fetchData)
     })
-  )
+  }
 
   useEffect(()=>{
-    fetchComments();
+    // fetchComments();
+
+    // local에서 임시로 json 데이터 활용하기
+    console.log(fetchData)
+    fetchData.sort(function(a,b){
+      return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; 
+    })
+    console.log(fetchData)
+    
+    setCache(fetchData)
+    setPeriod(fetchData)
+    setComments(fetchData)
   }, []);
 
   return (

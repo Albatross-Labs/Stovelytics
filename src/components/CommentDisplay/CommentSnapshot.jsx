@@ -2,7 +2,10 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Wrapper = styled.div `
-  border: 3px solid red;
+  border: 3px solid black;
+  margin: 8px;
+  padding-left: 14px;
+  overflow: hidden;
   // background-color: blue;
 `
 
@@ -19,9 +22,9 @@ export default function CommentSnapshot({comment}) {
         <p>Theme: {comment.theme}</p>
         <p>DA: {comment.da}</p>
         <p>Spam: {comment.spam}</p>
-        {comment.keywords.map(keyword => (
+        {/* {comment.keywords.map(keyword => (
            <p>{keyword}</p> 
-        ))}
+        ))} */}
 
       </div>
     </Wrapper>
