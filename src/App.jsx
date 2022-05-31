@@ -10,7 +10,8 @@ import { CommentsProvider } from './contexts/CommentsContext';
 import { CacheProvider } from './contexts/CacheContext';
 import { PeriodProvider } from './contexts/PeriodContext';
 
-import fetchData from '../second_data.json'
+import fetchData from '../data_results.json'
+// import fetchData from '../second_data.json'
 
 const Sections = styled.div`
   margin: 0;
