@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components';
+import { Line } from 'react-chartjs-2'
+import { Chart as ChartJS } from 'chart.js/auto';
 
 const Wrapper = styled.div`
   position: relative;
@@ -12,7 +14,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
-const Container = styled.div`
+const ChartWrapper = styled.div`
   position: relative;
   width: 98%;
   height: 95%;
@@ -22,12 +24,21 @@ const Container = styled.div`
 `
 
 export default function SentimentGraph() {
+
+  const data = {
+    labels: ['Red', 'Blue', 'Yellow', 'Green'],
+    datasets: [
+      {
+        data: [1, 2, 3, 4]
+      }
+    ]
+  }
+
   return (
     <Wrapper>
-      <Container>
-        SentimentGraph
-
-      </Container>
+      <ChartWrapper>
+        <Line data={data} />
+      </ChartWrapper>
     </Wrapper>
   )
 }
