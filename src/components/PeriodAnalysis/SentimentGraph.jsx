@@ -30,14 +30,69 @@ export default function SentimentGraph() {
   const [period, setPeriod] = useContext(PeriodContext)
 
 
-  // 일별 정보 모으기
 
+  // 일별 정보 모으기
+  const dayCount = {}
+  period.map(comment => {
+    const day = comment.created.substring(5, 10)
+    if(!(day in dayCount))
+      dayCount[day] = new Array();
+    dayCount[day].push(comment)
+  })
+
+  const dayLabels = []
+  const dayDatas = []
+  const dayDatasPos = []
+  const dayDatasNeu = []
+  const dayDatasNeg = []
+
+  for(const daily in dayCount){
+    dayLabels.push(daily)
+    
+    var posCnt = 0;
+    var neuCnt = 0;
+    var negCnt = 0;
+    for(const item of dayCount[daily]){
+      if (item.sentiment == '1')
+        posCnt++
+      if (item.sentiment == '0')
+        neuCnt++
+      if (item.sentiment == '-1')
+        negCnt++
+    }
+
+    dayDatas.push(dayCount[daily].length)
+    dayDatasPos.push(posCnt)
+    dayDatasNeu.push(neuCnt)
+    dayDatasNeg.push(negCnt)
+
+  }
+  dayLabels.reverse()
+  dayDatas.reverse()
+
+  dayDatasPos.reverse()
+  dayDatasNeu.reverse()
+  dayDatasNeg.reverse()
+
+  console.log("dayLabels", dayLabels)
+  console.log("dayDatas", dayDatas)
+  console.log("dayDatasPos", dayDatasPos)
+  console.log("dayDatasNeu", dayDatasNeu)
+  console.log("dayDatasNeg", dayDatasNeg)
 
   const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green'],
+    labels: dayLabels,
     datasets: [
       {
-        data: [1, 2, 3, 4]
+        label: 'Positive',
+        data: dayDatasPos
+      },
+      {
+        label: 'Neutral',
+        data: dayDatasNeu
+      },      {
+        label: 'Negative',
+        data: dayDatasNeg
       }
     ]
   }
