@@ -1,7 +1,9 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components';
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS } from 'chart.js/auto';
+
+import { PeriodContext } from '../../contexts/PeriodContext';
 
 const Wrapper = styled.div`
   position: relative;
@@ -24,6 +26,12 @@ const ChartWrapper = styled.div`
 `
 
 export default function SentimentGraph() {
+
+  const [period, setPeriod] = useContext(PeriodContext)
+
+
+  // 일별 정보 모으기
+
 
   const data = {
     labels: ['Red', 'Blue', 'Yellow', 'Green'],
