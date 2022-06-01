@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: 50%;
-  background-color: green;
+  // background-color: green;
   // margin: 4px;
   // box-sizing: border-box;
   display: flex;
@@ -23,7 +23,7 @@ const ChartWrapper = styled.div`
   height: 90%;
   bottom: -8%;
 
-  background-color: pink;
+  background-color: #FDF7FF;
   // margin: 14px;
   box-sizing: border-box;
   // overflow: scroll;
@@ -91,14 +91,18 @@ export default function SentimentGraph() {
       datasets: [
         {
           label: 'Positive',
-          data: dayDatasPos
+          data: dayDatasPos,
+          borderColor: 'rgb(53, 162, 235)',
+          backgroundColor: 'rgba(53, 162, 235, 0.5)',
         },
         {
           label: 'Neutral',
           data: dayDatasNeu
         },      {
           label: 'Negative',
-          data: dayDatasNeg
+          data: dayDatasNeg,
+          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgba(255, 99, 132, 0.5)',
         }
       ]
     }
