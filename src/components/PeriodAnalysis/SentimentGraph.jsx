@@ -34,6 +34,7 @@ export default function SentimentGraph() {
   const [period, setPeriod] = useContext(PeriodContext)
   const [labelFormat, setLabelFormat] = useState('Day')
 
+  var data = {}  
   // 일별 정보 모으기
   if(labelFormat == 'Day'){
 
@@ -79,13 +80,13 @@ export default function SentimentGraph() {
     dayDatasNeu.reverse()
     dayDatasNeg.reverse()
     
-    console.log("dayLabels", dayLabels)
-    console.log("dayDatas", dayDatas)
-    console.log("dayDatasPos", dayDatasPos)
-    console.log("dayDatasNeu", dayDatasNeu)
-    console.log("dayDatasNeg", dayDatasNeg)
+    // console.log("dayLabels", dayLabels)
+    // console.log("dayDatas", dayDatas)
+    // console.log("dayDatasPos", dayDatasPos)
+    // console.log("dayDatasNeu", dayDatasNeu)
+    // console.log("dayDatasNeg", dayDatasNeg)
     
-    const data = {
+    data = {
       labels: dayLabels,
       datasets: [
         {
@@ -104,7 +105,69 @@ export default function SentimentGraph() {
   }
   // 시간별 정보 모으기
   else{
+    const hourCount = {}
+    period.map(comment => {
+    const hour = comment.created.substring(8, 10) + 'd' + comment.created.substring(10, 13) + 'h'
+    if(!(hour in hourCount))
+        hourCount[hour] = new Array();
+      hourCount[hour].push(comment)
+    })
+    
+    const hourLabels = []
+    const hourDatas = []
+    const hourDatasPos = []
+    const hourDatasNeu = []
+    const hourDatasNeg = []
+    
+    for(const hourly in hourCount){
+      hourLabels.push(hourly)
+      
+      var posCnt = 0;
+      var neuCnt = 0;
+      var negCnt = 0;
+      for(const item of hourCount[hourly]){
+        if (item.sentiment == '1')
+          posCnt++
+        if (item.sentiment == '0')
+          neuCnt++
+        if (item.sentiment == '-1')
+        negCnt++
+      }
 
+      hourDatas.push(hourCount[hourly].length)
+      hourDatasPos.push(posCnt)
+      hourDatasNeu.push(neuCnt)
+      hourDatasNeg.push(negCnt)
+
+    }
+    hourLabels.reverse()
+    hourDatas.reverse()
+    hourDatasPos.reverse()
+    hourDatasNeu.reverse()
+    hourDatasNeg.reverse()
+    
+    // console.log("hourLabels", hourLabels)
+    // console.log("hourDatas", hourDatas)
+    // console.log("hourDatasPos", hourDatasPos)
+    // console.log("hourDatasNeu", hourDatasNeu)
+    // console.log("hourDatasNeg", hourDatasNeg)
+    
+    data = {
+      labels: hourLabels,
+      datasets: [
+        {
+          label: 'Positive',
+          data: hourDatasPos
+        },
+        {
+          label: 'Neutral',
+          data: hourDatasNeu
+        },      {
+          label: 'Negative',
+          data: hourDatasNeg
+        }
+      ]
+    }
   }
 
   return (
