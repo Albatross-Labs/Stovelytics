@@ -38,13 +38,13 @@ const EndDateSet = styled.input`
 `
 const SetButton = styled.button`
   position: absolute;
-  right: 10%;
-  top: 10%;
+  right: 15%;
+  top: 22%;
 `
 const ShowButton = styled.button`
   position: absolute;
-  right: 10%;
-  bottom: 10%;
+  right: 15%;
+  bottom: 22%;
 `
 
 export default function PeriodSetter() {

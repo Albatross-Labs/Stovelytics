@@ -20,8 +20,8 @@ const Wrapper = styled.div`
 const ChartWrapper = styled.div`
   position: relative;
   width: 98%;
-  height: 90%;
-  bottom: -8%;
+  height: 96%;
+  bottom: -2%;
 
   background-color: #FDF7FF;
   // margin: 14px;

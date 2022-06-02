@@ -13,24 +13,40 @@ const Wrapper = styled.div`
 
 `
 const Title = styled.div`
-  background-color: yellow;
+  // background-color: yellow;
   position: absolute;
+  color: #87419E;
 
   font-weight: 700;
   font-size: 24px;
-  left: 1%;
+  top: 4%;
+  left: 2%;
 `
 
 const IconWrapper = styled.div`
   position: absolute;
   width: 99%;
-  left: 1%;
-  top: 15%;
+  left: 2%;
+  top: 19%;
   display: flex;
   flex-direction: row;
-  background-color: pink;
+  // background-color: pink;
   overflow: auto;
 
+  ::-webkit-scrollbar {
+    height: 12px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #925EA3;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #B797C2;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
 `
 
 const ThemeLabels = {

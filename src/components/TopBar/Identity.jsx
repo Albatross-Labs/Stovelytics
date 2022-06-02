@@ -14,7 +14,7 @@ const Logo = styled.img`
   display: block;
   width: 18%;
   width: auto;
-  height: 85%;
+  height: 80%;
   left: 4%;
   border-radius: 50%;
 `
@@ -23,23 +23,24 @@ const SiteSlogan = styled.div`
   left: 24%;
   width: 50%;
   height: 100%;
+  color: #FFD6DD;
 `
 const Sitename = styled.div`
   position: absolute;
   height: 60%;
   display: flex;
   align-items: center;
-  top: 5%;
-  font-size: 5em;
+  top: 9%;
+  font-size: 4em;
   font-family: 'Rockwell'
 `
 const Slogan = styled.div`
   position: absolute;
   height: 40%;
   display: flex;
-  top: 50%;
+  top: 53%;
   align-items: center;
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-family: 'Rockwell'
 
 `

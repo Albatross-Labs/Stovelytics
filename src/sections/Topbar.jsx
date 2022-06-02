@@ -7,7 +7,7 @@ import PeriodSetter from '../components/TopBar/PeriodSetter';
 
 const TopBarSection = styled.div`
   position: relative;
-  background-color: #F3F2DB;
+  background-color: #925EA3;
   grid-area: TopBarSection;
   display: flex;
 `

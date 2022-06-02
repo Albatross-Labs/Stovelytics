@@ -43,7 +43,7 @@ export default function IconWithCount({label}) {
   }
   
   return (
-    <Wrapper style={{backgroundColor: ''}}>
+    <Wrapper style={{backgroundColor: '#E8E0F0'}}>
       <Icon icon={faCoffee} />
       <Title>{label.name}</Title>
       <Count>{count}</Count>

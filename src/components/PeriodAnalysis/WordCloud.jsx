@@ -19,6 +19,7 @@ const Wrapper = styled.div`
 const Title = styled.div`
   // background-color: yellow;
   position: absolute;
+  color: #87419E;
 
   font-weight: 700;
   font-size: 24px;
@@ -27,7 +28,7 @@ const Title = styled.div`
 `
 const WcWrapper =styled.div`
   position: absolute;
-  width: 150%;
+  width: 120%;
   height: 80%;
   // background-color: pink;
   bottom: 0;

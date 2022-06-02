@@ -4,8 +4,9 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   position: absolute;
   z-index: 4;
-  width: 30%;
-  text-align: center;
+  width: 95%;
+  top: 2%;
+  text-align: right;
 `
 
 export default function DayHourRadio({selectedValue, ...rest}) {
