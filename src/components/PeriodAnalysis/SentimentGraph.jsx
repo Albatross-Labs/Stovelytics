@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS } from 'chart.js/auto';
 
 import { PeriodContext } from '../../contexts/PeriodContext';
-import DayHourRadio from './DayHourRadio';
+import DayHourRadio from './SentimentGraph/DayHourRadio';
 
 const Wrapper = styled.div`
   position: relative;
@@ -40,14 +40,14 @@ export default function SentimentGraph() {
 
     const dayCount = {}
     period.map(comment => {
-    const day = comment.created.substring(5, 10)
-    if(!(day in dayCount))
+      const day = comment.created.substring(5, 10)
+      if(!(day in dayCount))
         dayCount[day] = new Array();
       dayCount[day].push(comment)
     })
     
     const dayLabels = []
-    const dayDatas = []
+    const dayDatas = []  
     const dayDatasPos = []
     const dayDatasNeu = []
     const dayDatasNeg = []
