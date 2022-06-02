@@ -9,17 +9,28 @@ const Wrapper = styled.div`
   position: relative;
   width: 60%;
   height: 25%;
-  // background-color: yellow;
+  box-sizing: border-box;
+
 `
 
 const Title = styled.div`
+  background-color: yellow;
+  position: absolute;
 
+  font-weight: 700;
+  font-size: 24px;
+  left: 1%;
 `
 
-
 const IconWrapper = styled.div`
+  position: absolute;
+  width: 99%;
+  left: 1%;
+  top: 15%;
   display: flex;
   flex-direction: row;
+  background-color: pink;
+  overflow: auto;
 `
 
 const DaLabels = {

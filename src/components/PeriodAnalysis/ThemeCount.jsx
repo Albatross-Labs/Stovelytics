@@ -9,15 +9,28 @@ const Wrapper = styled.div`
   position: relative;
   width: 60%;
   height: 25%;
-  background-color: red;
+  box-sizing: border-box;
+
 `
 const Title = styled.div`
+  background-color: yellow;
+  position: absolute;
 
+  font-weight: 700;
+  font-size: 24px;
+  left: 1%;
 `
 
-const CounterWrapper = styled.div`
+const IconWrapper = styled.div`
+  position: absolute;
+  width: 99%;
+  left: 1%;
+  top: 15%;
   display: flex;
   flex-direction: row;
+  background-color: pink;
+  overflow: auto;
+
 `
 
 const ThemeLabels = {
@@ -92,11 +105,11 @@ export default function ThemeCount() {
   return (
     <Wrapper>
       <Title>Theme Count</Title>    
-      <CounterWrapper>
+      <IconWrapper>
         {ThemeLabelList.map(label => (
           <IconWithCount label={label} key={label.name}></IconWithCount>
         ))}
-      </CounterWrapper>
+      </IconWrapper>
     </Wrapper>
   )
 }

@@ -18,6 +18,7 @@ const Wrapper = styled.div `
   // background-color: pink;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0px 8px 8px -10px #111;
   // overflow-x: scroll;
   padding-left: 14px;
