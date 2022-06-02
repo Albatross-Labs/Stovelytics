@@ -1,17 +1,20 @@
 @font-face {
   font-family: 'Holtwood';
-  src: url(./assets/HoltwoodOneSC-Regular.ttf);
+  src: url(./assets/fonts/HoltwoodOneSC-Regular.ttf);
 }
 
 @font-face {
   font-family: 'kopub';
-  src: url(./assets/KoPubWorld\ Batang\ Medium.ttf);
+  src: url(./assets/fonts/KoPubWorld\ Batang\ Medium.ttf);
 }
 
 * {
-  font-family: 'kopub';
+  font-family: 'Holtwood';
 }
 
+p {
+  font-family: 'palatino';
+}
 /* * {
   font-family: 'Holtwood';
 } */

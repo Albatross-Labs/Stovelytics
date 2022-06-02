@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   position: absolute;
   width: 20%;
   height: 100%;
-  right: 25%;
+  right: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,17 +18,19 @@ const Counts = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5%;
-  background-color: #FFE4C4;
-  font-size: 1.4em;
-  border-radius: 40%
+  padding: 2%;
+  background-color: #FFD6DD;
+  font-size: 1.2em;
+  border-radius: 60%;
+  font-weight: 700;
+  color: #925EA3;
 `
 export default function CommentCount() {
   const [comments] = useContext(CommentsContext);
 
   return (
     <Wrapper>
-      <Counts>{comments.length} Comments</Counts>
+      <Counts>{comments.length} comments</Counts>
     </Wrapper>
   )
 }

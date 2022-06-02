@@ -11,8 +11,10 @@ const Button = styled.button`
   color: #000000;
 
   &.active {
-    background-color: #DBF2FF;
-    color: #1170FF;
+    background-color: #D1BAD9;
+    // color: #1170FF;
+    color: #87419E;
+    font-weight: 600;
   }
 `
 

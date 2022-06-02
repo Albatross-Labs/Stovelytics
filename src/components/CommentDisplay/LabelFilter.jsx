@@ -12,16 +12,23 @@ const DaLabelList = ['질문', '의견', '건의', '인증', '친목', '정보']
 
 const Wrapper = styled.div `
   position: relative;
-  width: 100%;
+  width: 97%;
   height: 20%;
+  // right: 6%;
+  left: 0.5%;
+  top: 1%;
+
   // height: 25%;
-  // background-color: pink;
+  background-color: #FDF7FF;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0px 8px 8px -10px #111;
   // overflow-x: scroll;
   padding-left: 14px;
   box-sizing: border-box;
+  z-index: 4;
+  // border-radius: 5%;
 `
 const SetButton = styled.button`
   position: absolute;

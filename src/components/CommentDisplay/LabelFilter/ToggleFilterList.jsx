@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 2px;
 `
 
 const Label = styled.div`
   font-weight: 700;
   color: black;
-  padding: 5px;
+  color: #87419E;
+
+  padding: 2px;
 `
 
 const ButtonWrapper = styled.div`

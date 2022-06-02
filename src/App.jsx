@@ -10,7 +10,8 @@ import { CommentsProvider } from './contexts/CommentsContext';
 import { CacheProvider } from './contexts/CacheContext';
 import { PeriodProvider } from './contexts/PeriodContext';
 
-import fetchData from '../second_data.json'
+import fetchData from '../data_results.json'
+// import fetchData from '../second_data.json'
 
 const Sections = styled.div`
   margin: 0;
@@ -41,7 +42,7 @@ export default function App() {
       console.log(fetchData)
       fetchData.sort(function(a,b){
         return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; 
-      });
+      })
       console.log(fetchData)
       
       setCache(fetchData)
@@ -54,11 +55,9 @@ export default function App() {
     // fetchComments();
 
     // local에서 임시로 json 데이터 활용하기
-    console.log(fetchData)
     fetchData.sort(function(a,b){
       return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; 
     })
-    console.log(fetchData)
     
     setCache(fetchData)
     setPeriod(fetchData)
