@@ -55,11 +55,9 @@ export default function App() {
     // fetchComments();
 
     // local에서 임시로 json 데이터 활용하기
-    console.log(fetchData)
     fetchData.sort(function(a,b){
       return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; 
     })
-    console.log(fetchData)
     
     setCache(fetchData)
     setPeriod(fetchData)

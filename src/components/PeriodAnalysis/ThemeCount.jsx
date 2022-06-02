@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
 
 import IconWithCount from './Counter/IconWithCount';
+import { PeriodContext } from '../../contexts/PeriodContext';
 
 
 const Wrapper = styled.div`
@@ -19,62 +20,78 @@ const CounterWrapper = styled.div`
   flex-direction: row;
 `
 
-const ThemeLabelList = [
-  {
-    name: '캐릭터',
-    img: ''
+const ThemeLabels = {
+  '캐릭터': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '아이템',
-    img: ''
+  '아이템': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '레이드',
-    img: ''
+  '레이드': {
+    img: '',
+    cnt: 0
   },  
-  {
-    name: '업데이트',
-    img: ''
+  '업데이트': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '이벤트',
-    img: ''
+  '이벤트': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '버그',
-    img: ''
+  '버그': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '해킹',
-    img: ''
+  '해킹': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '점검',
-    img: ''
+  '점검': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '굿즈',
-    img: ''
+  '굿즈': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '유저',
-    img: ''
+  '유저': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '회사',
-    img: ''
+  '회사': {
+    img: '',
+    cnt: 0
   },
-  {
-    name: '기타',
-    img: ''
+  '기타': {
+    img: '',
+    cnt: 0
   }
-]
+}
 
 
 export default function ThemeCount() {
+  const [period, setPeriod] = useContext(PeriodContext)
+
+  for(const comment of period)
+    ThemeLabels[comment.theme].cnt++
+  
+  const ThemeLabelList = []
+  for(const ThemeLabel in ThemeLabels)
+    ThemeLabelList.push({
+      name: ThemeLabel,
+      ... ThemeLabels[ThemeLabel]
+    })
+  
+  ThemeLabelList.sort(function(a,b){
+    return a.cnt > b.cnt ? -1 : a.cnt < b.cnt ? 1 : 0; 
+  })
+  
   return (
     <Wrapper>
-      <Title>Theme</Title>    
+      <Title>Theme Count</Title>    
       <CounterWrapper>
         {ThemeLabelList.map(label => (
           <IconWithCount label={label} key={label.name}></IconWithCount>
