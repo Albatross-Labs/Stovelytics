@@ -9,9 +9,12 @@
 }
 
 * {
-  font-family: 'kopub';
+  font-family: 'palatino';
 }
 
+p {
+  font-family: 'palatino';
+}
 /* * {
   font-family: 'Holtwood';
 } */

@@ -13,8 +13,9 @@ const Logo = styled.img`
   position: absolute;
   display: block;
   width: 18%;
+  width: auto;
   height: 85%;
-  left: 3%;
+  left: 4%;
   border-radius: 50%;
 `
 const SiteSlogan = styled.div`
@@ -29,8 +30,8 @@ const Sitename = styled.div`
   display: flex;
   align-items: center;
   top: 5%;
-  font-size: 3em;
-  font-family: 'Holtwood'
+  font-size: 5em;
+  font-family: 'Rockwell'
 `
 const Slogan = styled.div`
   position: absolute;
@@ -39,6 +40,8 @@ const Slogan = styled.div`
   top: 50%;
   align-items: center;
   font-size: 1.4em;
+  font-family: 'Rockwell'
+
 `
 
 export default function Identity() {
