@@ -42,7 +42,7 @@ export default function App() {
       console.log(fetchData)
       fetchData.sort(function(a,b){
         return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; 
-      });
+      })
       console.log(fetchData)
       
       setCache(fetchData)

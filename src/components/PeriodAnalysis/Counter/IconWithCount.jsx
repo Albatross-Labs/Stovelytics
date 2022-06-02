@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { PeriodContext } from '../../../contexts/PeriodContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Count = styled.div`
 
@@ -20,7 +20,7 @@ export default function IconWithCount({label}) {
   return (
     <div>
       <div>{label.name}</div>
-      <FontAwesomeIcon icon={label.img}/>
+      {/* <FontAwesomeIcon icon={label.img}/> */}
       <Count>{count}</Count>
     </div>
   )
