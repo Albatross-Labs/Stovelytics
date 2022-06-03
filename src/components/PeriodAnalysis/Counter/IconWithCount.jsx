@@ -33,12 +33,13 @@ const Count = styled.div`
 
 `
 
-export default function IconWithCount({label}) {
+export default function IconWithCount({task, label}) {
   const [period, setPeriod] = useContext(PeriodContext)
   
   var count = 0;
   for(const comment of period){
-    if(comment.da === label.name || comment.theme === label.name )
+    // console.log(task, comment[task], label.name)
+    if(comment[task] === label.name)
       count++
   }
   

@@ -54,15 +54,7 @@ const ThemeLabels = {
     img: '',
     cnt: 0
   },
-  '아이템': {
-    img: '',
-    cnt: 0
-  },
-  '레이드': {
-    img: '',
-    cnt: 0
-  },  
-  '업데이트': {
+  '컨텐츠': {
     img: '',
     cnt: 0
   },
@@ -74,15 +66,7 @@ const ThemeLabels = {
     img: '',
     cnt: 0
   },
-  '해킹': {
-    img: '',
-    cnt: 0
-  },
   '점검': {
-    img: '',
-    cnt: 0
-  },
-  '굿즈': {
     img: '',
     cnt: 0
   },
@@ -123,7 +107,7 @@ export default function ThemeCount() {
       <Title>Theme Count</Title>    
       <IconWrapper>
         {ThemeLabelList.map(label => (
-          <IconWithCount label={label} key={label.name}></IconWithCount>
+          <IconWithCount task={'theme'} label={label} key={label.name}></IconWithCount>
         ))}
       </IconWrapper>
     </Wrapper>
