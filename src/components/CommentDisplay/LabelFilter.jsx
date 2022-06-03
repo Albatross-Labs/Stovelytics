@@ -17,14 +17,15 @@ const Wrapper = styled.div `
   // right: 6%;
   left: 0.5%;
   top: 1%;
-
+  
   // height: 25%;
   background-color: #FDF7FF;
+  // background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0px 8px 8px -10px #111;
-  // overflow-x: scroll;
+  overflow-y: auto;
   padding-left: 14px;
   box-sizing: border-box;
   z-index: 4;

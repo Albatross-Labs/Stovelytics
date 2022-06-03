@@ -5,14 +5,14 @@ const Button = styled.button`
   cursor: pointer;
   border: none;
   border-radius: 15%;
-  margin: 5px;
+  margin: 2px;
+  font-size: 0.6em;
 
   background-color: #F0F0F0;
   color: #000000;
 
   &.active {
     background-color: #D1BAD9;
-    // color: #1170FF;
     color: #87419E;
     font-weight: 600;
   }
