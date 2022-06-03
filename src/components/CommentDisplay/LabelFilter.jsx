@@ -7,8 +7,8 @@ import LabelButton from './LabelFilter/LabelButton';
 import ToggleFilterList from './LabelFilter/ToggleFilterList';
 
 const SentimentLabelList = ['긍정', '중립', '부정']
-const ThemeLabelList = ['캐릭터', '아이템', '레이드', '업데이트', '이벤트', '버그', '해킹', '점검', '굿즈', '유저', '회사', '기타']
-const DaLabelList = ['질문', '의견', '건의', '인증', '친목', '정보']
+const ThemeLabelList = ['캐릭터', '컨텐츠', '이벤트', '버그', '점검', '유저', '회사', '기타']
+const DaLabelList = ['질문', '의견', '건의', '정보', '일상']
 
 const Wrapper = styled.div `
   position: relative;
@@ -98,14 +98,14 @@ export default function LabelFilter() {
         ))}
       </ToggleFilterList>
 
-      <ToggleFilterList label="Theme">
-        {ThemeLabelList.map(label => (
+      <ToggleFilterList label="Dialog Act">
+        {DaLabelList.map(label => (
           <LabelButton key={label} title={label}/>
         ))}
       </ToggleFilterList>
 
-      <ToggleFilterList label="Dialog Act">
-        {DaLabelList.map(label => (
+      <ToggleFilterList label="Theme">
+        {ThemeLabelList.map(label => (
           <LabelButton key={label} title={label}/>
         ))}
       </ToggleFilterList>

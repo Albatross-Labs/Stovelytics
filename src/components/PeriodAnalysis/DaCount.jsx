@@ -63,15 +63,11 @@ const DaLabels = {
     img: 'faCoffee',
     cnt: 0
   },
-  '인증': {
-    img: 'faCoffee',
-    cnt: 0
-  },
-  '친목': {
-    img: 'faCoffee',
-    cnt: 0
-  },
   '정보': {
+    img: 'faCoffee',
+    cnt: 0
+  },
+  '일상': {
     img: 'faCoffee',
     cnt: 0
   }
@@ -99,7 +95,7 @@ export default function DaCount() {
       <Title>DA Count</Title>
       <IconWrapper>
         {DaLabelList.map(label => (
-          <IconWithCount label={label} key={label.name}></IconWithCount>
+          <IconWithCount task={'da'} label={label} key={label.name}></IconWithCount>
         ))}
       </IconWrapper>
     </Wrapper>
