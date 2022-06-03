@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components';
 
 import { CommentsContext } from '../../contexts/CommentsContext';
-import CommentSnapshot from './CommentSnapshot';
+import CommentSnapshot from './FilteredComments/CommentSnapshot';
 
 const Wrapper = styled.div `
   position: relative;
@@ -12,6 +12,7 @@ const Wrapper = styled.div `
   height: 79.5%;
   // background-color: blue;
   top: 0.5%;
+
 `
 
 const CommentsList = styled.div`
