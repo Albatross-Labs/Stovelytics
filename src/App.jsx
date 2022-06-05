@@ -38,6 +38,7 @@ export default function App() {
   const fetchComments = async () => {
     await axios.get('https://yjdssur46d.execute-api.ap-northeast-2.amazonaws.com/prod')
     .then(res=>{
+      console.log(res)
       const fetchData = JSON.parse(res.data.body)['Items']
       
       console.log(fetchData)

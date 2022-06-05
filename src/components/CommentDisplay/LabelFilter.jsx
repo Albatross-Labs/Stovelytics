@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components';
 import { CommentsContext } from '../../contexts/CommentsContext';
 import { PeriodContext } from '../../contexts/PeriodContext';
@@ -31,16 +31,10 @@ const Wrapper = styled.div `
   z-index: 4;
   // border-radius: 5%;
 `
-const SetButton = styled.button`
-  position: absolute;
-  right: 10%;
-  top: 10%;
-  z-index: 4;
-`
 const ShowButton = styled.button`
   position: absolute;
   right: 10%;
-  top: 25%;
+  top: 10%;
   z-index: 4;
 `
 
@@ -48,53 +42,29 @@ export default function LabelFilter() {
   
   const [period, setPeriod] = useContext(PeriodContext)
   const [comments, setComments] = useContext(CommentsContext)
-  
-  const handleSet = () => {
-    const activeSentimentLabels = [];
-    const activeThemeLabels = [];
-    const activeDaLabels = [];
-
-    const activeEls = document.getElementsByClassName('label active')
-    for(const activeEl of activeEls){
-      if(SentimentLabelList.includes(activeEl.innerHTML)){
-        if(activeEl.innerHTML === '부정')
-          activeSentimentLabels.push('-1')
-        else if(activeEl.innerHTML === '중립')
-          activeSentimentLabels.push('0')
-        else if(activeEl.innerHTML === '긍정')
-          activeSentimentLabels.push('1')
-      }
-      if(ThemeLabelList.includes(activeEl.innerHTML))
-        activeThemeLabels.push(activeEl.innerHTML)
-      if(DaLabelList.includes(activeEl.innerHTML))
-        activeDaLabels.push(activeEl.innerHTML)
-    }
-
-    setComments(period.filter((comment) => {
-      return ( 
-        (activeSentimentLabels.length === 0 || activeSentimentLabels.includes(comment['sentiment'])) &&
-        (activeThemeLabels.length === 0 || activeThemeLabels.includes(comment['theme'])) &&
-        (activeDaLabels.length === 0 || activeDaLabels.includes(comment['da']))
-      )
-    }))
-  }
 
   const handleReset = () => {
-    setComments(period)
-    const activeEls = document.getElementsByClassName('label active')
+    const activeEls = document.getElementsByClassName('active')
+    
+    const list = []
     for(const activeEl of activeEls)
-      activeEl.click()
+      list.push(activeEl)
+    for(const item of list){
+      const str = item.className
+      const len = str.length
+      item.className = str.substring(0, len-7)
+    }
+
+    setComments(period)
   }
 
   return (
-    <Wrapper>
-      
-      <SetButton onClick={handleSet}>SET</SetButton>
+    <Wrapper>      
       <ShowButton onClick={handleReset}>Reset</ShowButton>
 
       <ToggleFilterList label="Sentiment">
         {SentimentLabelList.map(label => (
-          <LabelButton key={label} title={label}/>
+          <LabelButton  key={label} title={label}/>
         ))}
       </ToggleFilterList>
 
