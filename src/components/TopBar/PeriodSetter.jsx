@@ -9,8 +9,8 @@ const Wrapper = styled.div`
   position: absolute;
   width: 25%;
   height: 100%;
-  top: 0;
-  right: 0;
+  // top: 0;
+  right: 13%;
   // background-color: pink;
   display: flex;
   align-items: center;
@@ -19,9 +19,10 @@ const Wrapper = styled.div`
 
 const StartDateSet = styled.input`
   position: absolute;
-  top: 20%;
+  top: 40%;
+  left: -10%;
   height: 20%;
-  width: 40%;
+  width: 30%;
   display: flex;
   align-items: center;
   font-size: 0.4em;
@@ -29,22 +30,23 @@ const StartDateSet = styled.input`
 
 const EndDateSet = styled.input`
   position: absolute;
-  top: 60%;
+  top: 40%;
+  left: 25%;
   height: 20%;
-  width: 40%;
+  width: 30%;
   display: flex;
   align-items: center;
   font-size: 0.4em;
 `
 const SetButton = styled.button`
   position: absolute;
-  right: 15%;
-  top: 22%;
+  left: 59%;
+  top: 40%;
 `
 const ShowButton = styled.button`
   position: absolute;
-  right: 15%;
-  bottom: 22%;
+  left: 70%;
+  top: 40%;
 `
 
 export default function PeriodSetter() {
@@ -69,13 +71,13 @@ export default function PeriodSetter() {
     <Wrapper>
       <StartDateSet 
         onChange={(e)=>setStartDate(e.target.value)} 
-        placeholder="Start Date ex) 2022.05.15 18:00"
+        placeholder="ex) 2022.05.15 18:00"
         // value={comments[0]['created']}
 
       />
       <EndDateSet 
         onChange={(e)=>setEndDate(e.target.value)} 
-        placeholder="End Date ex) 2022.05.15 22:00"
+        placeholder="ex) 2022.05.15 22:00"
         // value={comments[comments.length-1]['created']}
       />
       <SetButton onClick={handlePeriod}>SET</SetButton>

@@ -27,7 +27,7 @@ const CommentsList = styled.div`
     width: 8px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #925EA3;
+    background-color: #000000;
     border-radius: 10px;
     background-clip: padding-box;
     border: 2px solid transparent;

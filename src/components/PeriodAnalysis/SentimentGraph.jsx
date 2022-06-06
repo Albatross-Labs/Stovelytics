@@ -23,7 +23,7 @@ const ChartWrapper = styled.div`
   height: 96%;
   bottom: -2%;
 
-  background-color: #FDF7FF;
+  background-color: #ffffff;
   // margin: 14px;
   box-sizing: border-box;
   // overflow: scroll;

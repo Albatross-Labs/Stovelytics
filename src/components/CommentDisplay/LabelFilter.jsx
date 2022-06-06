@@ -19,7 +19,7 @@ const Wrapper = styled.div `
   top: 1%;
   
   // height: 25%;
-  background-color: #FDF7FF;
+  background-color: #ffffff;
   // background-color: black;
   display: flex;
   flex-direction: column;

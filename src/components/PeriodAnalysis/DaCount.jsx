@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 const Title = styled.div`
   // background-color: yellow;
   position: absolute;
-  color: #87419E;
+  color: #000000;
 
   font-weight: 700;
   font-size: 24px;
@@ -38,7 +38,7 @@ const IconWrapper = styled.div`
     height: 12px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #925EA3;
+    background-color: #000000;
     border-radius: 10px;
     background-clip: padding-box;
     border: 3px solid transparent;

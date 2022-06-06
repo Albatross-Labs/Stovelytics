@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 
 const Label = styled.div`
   font-weight: 700;
-  color: #87419E;
+  color: #000000;
 
   padding: 2px;
 `
