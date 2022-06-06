@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
 import ReactWordcloud from "react-wordcloud";
 
-import data from './data'
+import { CommentsContext } from '../../contexts/CommentsContext'
 
 const Wrapper = styled.div`
   position: relative;
@@ -28,19 +28,42 @@ const Title = styled.div`
 `
 const WcWrapper =styled.div`
   position: absolute;
-  width: 120%;
+  width: 100%;
   height: 80%;
   // background-color: pink;
   bottom: 0;
 `
 
 export default function WordCloud() {
+  const [comments, setComments] = useContext(CommentsContext)
+
+  const keywordValueSet = {}
+  for(const comment of comments){
+    console.log(comment)
+    for(const keywordValue of comment.keywords){
+      const key = keywordValue[0]
+      const value = keywordValue[1]
+      console.log(key, value)
+      if(!(key in keywordValueSet))
+        keywordValueSet[key] = 0
+      keywordValueSet[key] += Number(value)
+    }
+  }
+  
+  const dataList =[]
+  for(const key in keywordValueSet)
+  dataList.push({
+    text: key,
+    value: keywordValueSet[key]
+  })
+  console.log(dataList)
+  
 
   return (
     <Wrapper>
       <Title>Wordcloud</Title>
       <WcWrapper>
-        <ReactWordcloud words={data} />
+        <ReactWordcloud words={dataList} />
       </WcWrapper>
     </Wrapper>
   )

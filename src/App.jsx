@@ -41,11 +41,11 @@ export default function App() {
       console.log(res)
       const fetchData = JSON.parse(res.data.body)['Items']
       
-      console.log(fetchData)
+      // console.log(fetchData)
       fetchData.sort(function(a,b){
         return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; 
       })
-      console.log(fetchData)
+      // console.log(fetchData)
       
       setCache(fetchData)
       setPeriod(fetchData)
