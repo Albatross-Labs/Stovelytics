@@ -42,11 +42,18 @@ const SetButton = styled.button`
   position: absolute;
   left: 59%;
   top: 40%;
+  z-index: 4;
+  cursor: pointer;
+  outline: none;
+
 `
 const ShowButton = styled.button`
   position: absolute;
   left: 70%;
   top: 40%;
+  z-index: 4;
+  cursor: pointer;
+  outline: none;
 `
 
 export default function PeriodSetter() {

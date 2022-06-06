@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   height: 50%;
   // background-color: blue;
   right: -60%;
-  top: -50%;
+  top: -40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,16 +23,22 @@ const Title = styled.div`
 
   font-weight: 700;
   font-size: 24px;
-  left: 4%;
-  top: 4%;
+  left: 6%;
+  top: 2%;
+  font-family: Rockwell;
+
 `
 const WcWrapper =styled.div`
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 80%;
   // background-color: pink;
-  bottom: 0;
-`
+  bottom: 8%;
+  right: 1%;;
+  background: rgb(223,223,223);
+  background: radial-gradient(circle, rgba(223,223,223,1) 0%, rgba(255,255,255,1) 100%);
+  border-radius: 50%;
+  `
 
 export default function WordCloud() {
   const [comments, setComments] = useContext(CommentsContext)

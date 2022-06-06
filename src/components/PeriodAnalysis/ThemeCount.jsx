@@ -7,9 +7,11 @@ import { PeriodContext } from '../../contexts/PeriodContext';
 
 const Wrapper = styled.div`
   position: relative;
-  width: 60%;
-  height: 25%;
+  width: 58%;
+  height: 20%;
   box-sizing: border-box;
+  left: 1%;
+  top: 5%;
 
 `
 const Title = styled.div`
@@ -19,8 +21,10 @@ const Title = styled.div`
 
   font-weight: 700;
   font-size: 24px;
-  top: 4%;
-  left: 2%;
+  top: 0;
+  left: 4%;
+  font-family: Rockwell;
+
 `
 
 const IconWrapper = styled.div`
@@ -37,13 +41,13 @@ const IconWrapper = styled.div`
     height: 12px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #000000;
+    background-color: #2f3542;
     border-radius: 10px;
     background-clip: padding-box;
     border: 3px solid transparent;
   }
   ::-webkit-scrollbar-track {
-    background-color: #B797C2;
+    background-color: grey;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }

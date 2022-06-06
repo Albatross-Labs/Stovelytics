@@ -15,9 +15,10 @@ const Wrapper = styled.div `
   width: 97%;
   height: 20%;
   // right: 6%;
-  left: 0.5%;
+  // left: 0.5%;
+  right: -2%;
   top: 1%;
-  
+  border: 4px solid #525559;
   // height: 25%;
   background-color: #ffffff;
   // background-color: black;

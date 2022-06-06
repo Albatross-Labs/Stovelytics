@@ -44,7 +44,7 @@ export default function IconWithCount({task, label}) {
   }
   
   return (
-    <Wrapper style={{backgroundColor: '#E8E0F0'}}>
+    <Wrapper style={{backgroundColor: '#dfdfdf'}}>
       <Icon icon={faCoffee} />
       <Title>{label.name}</Title>
       <Count>{count}</Count>
