@@ -73,12 +73,12 @@ export default function SentimentGraph() {
       dayDatasNeg.push(negCnt)
 
     }
-    dayLabels.reverse()
-    dayDatas.reverse()
-    
-    dayDatasPos.reverse()
-    dayDatasNeu.reverse()
-    dayDatasNeg.reverse()
+    // 날짜 맞춰주기
+    // dayLabels.reverse()
+    // dayDatas.reverse()
+    // dayDatasPos.reverse()
+    // dayDatasNeu.reverse()
+    // dayDatasNeg.reverse()
     
     // console.log("dayLabels", dayLabels)
     // console.log("dayDatas", dayDatas)
