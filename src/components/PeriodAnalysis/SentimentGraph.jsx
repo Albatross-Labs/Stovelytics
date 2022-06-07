@@ -144,11 +144,11 @@ export default function SentimentGraph() {
       hourDatasNeg.push(negCnt)
 
     }
-    hourLabels.reverse()
-    hourDatas.reverse()
-    hourDatasPos.reverse()
-    hourDatasNeu.reverse()
-    hourDatasNeg.reverse()
+    // hourLabels.reverse()
+    // hourDatas.reverse()
+    // hourDatasPos.reverse()
+    // hourDatasNeu.reverse()
+    // hourDatasNeg.reverse()
     
     // console.log("hourLabels", hourLabels)
     // console.log("hourDatas", hourDatas)
