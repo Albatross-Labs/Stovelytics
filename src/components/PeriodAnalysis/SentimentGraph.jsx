@@ -23,7 +23,7 @@ const ChartWrapper = styled.div`
   height: 96%;
   bottom: -2%;
 
-  background-color: #FDF7FF;
+  background-color: #ffffff;
   // margin: 14px;
   box-sizing: border-box;
   // overflow: scroll;
@@ -73,12 +73,12 @@ export default function SentimentGraph() {
       dayDatasNeg.push(negCnt)
 
     }
-    dayLabels.reverse()
-    dayDatas.reverse()
-    
-    dayDatasPos.reverse()
-    dayDatasNeu.reverse()
-    dayDatasNeg.reverse()
+    // 날짜 맞춰주기
+    // dayLabels.reverse()
+    // dayDatas.reverse()
+    // dayDatasPos.reverse()
+    // dayDatasNeu.reverse()
+    // dayDatasNeg.reverse()
     
     // console.log("dayLabels", dayLabels)
     // console.log("dayDatas", dayDatas)

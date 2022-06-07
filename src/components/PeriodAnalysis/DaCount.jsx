@@ -7,21 +7,22 @@ import { PeriodContext } from '../../contexts/PeriodContext';
 
 const Wrapper = styled.div`
   position: relative;
-  width: 60%;
-  height: 25%;
+  width: 58%;
+  height: 20%;
   box-sizing: border-box;
-
+  left: 1%;
 `
 
 const Title = styled.div`
   // background-color: yellow;
   position: absolute;
-  color: #87419E;
+  color: #000000;
 
   font-weight: 700;
   font-size: 24px;
-  left: 2%;
-  top: 8%
+  left: 4%;
+  top: 4%;
+  font-family: Rockwell;
 `
 
 const IconWrapper = styled.div`
@@ -38,13 +39,13 @@ const IconWrapper = styled.div`
     height: 12px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #925EA3;
+    background-color: #2f3542;
     border-radius: 10px;
     background-clip: padding-box;
     border: 3px solid transparent;
   }
   ::-webkit-scrollbar-track {
-    background-color: #B797C2;
+    background-color: grey;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }
@@ -92,7 +93,7 @@ export default function DaCount() {
 
   return (
     <Wrapper>
-      <Title>DA Count</Title>
+      <Title>Da Count</Title>
       <IconWrapper>
         {DaLabelList.map(label => (
           <IconWithCount task={'da'} label={label} key={label.name}></IconWithCount>
