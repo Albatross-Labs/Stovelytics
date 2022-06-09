@@ -17,7 +17,7 @@ export default function PeriodAnalysis() {
       <SentimentGraph/>
       <DaCount/>
       <ThemeCount/>
-      {/* <WordCloud/> */}
+      <WordCloud/>
     </PeriodAnalysisSection>
   )
 }

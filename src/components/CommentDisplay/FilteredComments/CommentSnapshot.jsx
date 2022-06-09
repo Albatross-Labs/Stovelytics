@@ -123,6 +123,10 @@ const Class = styled.button`
 
 `
 
+const Content = styled.p`
+  line-height: 30px;
+`
+
 export default function CommentSnapshot({comment}) {
   return (
     <Wrapper>
@@ -139,7 +143,7 @@ export default function CommentSnapshot({comment}) {
         ))} */}
       </ClassWrapper>
 
-      <p>{comment.content}</p>
+      <Content>{comment.content}</Content>
     </Wrapper>
 
   )

@@ -22,19 +22,33 @@ const Counts = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  // padding: 2%;
-  background-color: #000000;
+
   font-size: 1.2em;
-  // border-radius: 60%;
   font-weight: 700;
+  font-family: Rockwell;
   color: #ffffff;
+  // background-color: red;
+
 `
 export default function CommentCount() {
   const [comments] = useContext(CommentsContext);
 
   return (
     <Wrapper>
-      <Counts>{comments.length} comments</Counts>
+      <Counts> 
+        <p style={{
+          fontSize: '1.8em',
+          marginRight: '6px'
+        }}>
+          {comments.length}
+        </p>
+        <p style={{
+          fontSize: '0.9em',
+          marginRight: '6px'
+        }}>
+          comments
+        </p>
+      </Counts>
     </Wrapper>
   )
 }

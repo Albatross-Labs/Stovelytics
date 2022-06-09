@@ -32,11 +32,13 @@ const Wrapper = styled.div `
   z-index: 4;
   // border-radius: 5%;
 `
-const ShowButton = styled.button`
+const ResetButton = styled.button`
   position: absolute;
-  right: 10%;
-  top: 10%;
+  right: 1%;
+  bottom: 5%;
   z-index: 4;
+  font-family: Rockwell;
+  font-weight: 600;
 `
 
 export default function LabelFilter() {
@@ -61,7 +63,7 @@ export default function LabelFilter() {
 
   return (
     <Wrapper>      
-      <ShowButton onClick={handleReset}>Reset</ShowButton>
+      <ResetButton onClick={handleReset}>Reset</ResetButton>
 
       <ToggleFilterList label="Sentiment">
         {SentimentLabelList.map(label => (

@@ -28,7 +28,7 @@ const Button = styled.button`
         if(label === '질문')
           return 'rgb(109, 89, 106, 0.3)'
         if(label === '의견')
-          return 'rgb(173, 112, 127, 0.3)'
+          return 'rgb(109, 89, 106, 0.3)'
         if(label === '건의')
           return 'rgb(230, 142, 124, 0.3)'
         if(label === '정보')

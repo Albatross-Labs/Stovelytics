@@ -10,11 +10,24 @@ const Wrapper = styled.div`
   width: 25%;
   height: 100%;
   // top: 0;
-  right: 13%;
+  right: 10%;
   // background-color: pink;
   display: flex;
   align-items: center;
   justify-content: center;
+`
+
+const StartLabel = styled.div`
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  font-size: 1em;
+  color: white;
+
+  // background-color: pink;
+  font-family: Rockwell;
+  font-weight: 600;
+
 `
 
 const StartDateSet = styled.input`
@@ -26,6 +39,21 @@ const StartDateSet = styled.input`
   display: flex;
   align-items: center;
   font-size: 0.4em;
+`
+
+const EndLabel = styled.div`
+  position: absolute;
+  top: 20%;
+  left: 25%;
+
+  // height: 20%;
+  // width: 30%;
+  
+  font-size: 1em;
+  color: white;  
+  font-family: Rockwell;
+  font-weight: 600;
+
 `
 
 const EndDateSet = styled.input`
@@ -45,6 +73,8 @@ const SetButton = styled.button`
   z-index: 4;
   cursor: pointer;
   outline: none;
+  font-weight: 600;
+  font-family: Rockwell;
 
 `
 const ShowButton = styled.button`
@@ -54,6 +84,8 @@ const ShowButton = styled.button`
   z-index: 4;
   cursor: pointer;
   outline: none;
+  font-weight: 600;
+  font-family: Rockwell;
 `
 
 export default function PeriodSetter() {
@@ -76,17 +108,17 @@ export default function PeriodSetter() {
 
   return (
     <Wrapper>
+      <StartLabel>Start</StartLabel>
       <StartDateSet 
         onChange={(e)=>setStartDate(e.target.value)} 
         placeholder="ex) 2022.05.15 18:00"
-        // value={comments[0]['created']}
-
       />
+      <EndLabel>End</EndLabel>
       <EndDateSet 
         onChange={(e)=>setEndDate(e.target.value)} 
         placeholder="ex) 2022.05.15 22:00"
-        // value={comments[comments.length-1]['created']}
       />
+
       <SetButton onClick={handlePeriod}>SET</SetButton>
       <ShowButton onClick={handleReset}>Reset</ShowButton>
     </Wrapper>
