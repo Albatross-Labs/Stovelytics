@@ -53,44 +53,43 @@ const IconWrapper = styled.div`
   }
 `
 
-const ThemeLabels = {
-  '캐릭터': {
-    img: '',
-    cnt: 0
-  },
-  '컨텐츠': {
-    img: '',
-    cnt: 0
-  },
-  '이벤트': {
-    img: '',
-    cnt: 0
-  },
-  '버그': {
-    img: '',
-    cnt: 0
-  },
-  '점검': {
-    img: '',
-    cnt: 0
-  },
-  '유저': {
-    img: '',
-    cnt: 0
-  },
-  '회사': {
-    img: '',
-    cnt: 0
-  },
-  '기타': {
-    img: '',
-    cnt: 0
-  }
-}
-
-
 export default function ThemeCount() {
   const [period, setPeriod] = useContext(PeriodContext)
+
+  const ThemeLabels = {
+    '캐릭터': {
+      img: '',
+      cnt: 0
+    },
+    '컨텐츠': {
+      img: '',
+      cnt: 0
+    },
+    '이벤트': {
+      img: '',
+      cnt: 0
+    },
+    '버그': {
+      img: '',
+      cnt: 0
+    },
+    '점검': {
+      img: '',
+      cnt: 0
+    },
+    '유저': {
+      img: '',
+      cnt: 0
+    },
+    '회사': {
+      img: '',
+      cnt: 0
+    },
+    '기타': {
+      img: '',
+      cnt: 0
+    }
+  }
 
   for(const comment of period)
     ThemeLabels[comment.theme].cnt++
@@ -106,6 +105,8 @@ export default function ThemeCount() {
     return a.cnt > b.cnt ? -1 : a.cnt < b.cnt ? 1 : 0; 
   })
   
+  console.log(ThemeLabelList)
+
   return (
     <Wrapper>
       <Title>Theme Count</Title>    

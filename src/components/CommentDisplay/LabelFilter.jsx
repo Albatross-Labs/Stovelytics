@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import styled from 'styled-components';
 import { CommentsContext } from '../../contexts/CommentsContext';
 import { PeriodContext } from '../../contexts/PeriodContext';
+import KeywordSearch from './LabelFilter/KeywordSearch';
 
 import LabelButton from './LabelFilter/LabelButton';
 import ToggleFilterList from './LabelFilter/ToggleFilterList';
@@ -31,6 +32,7 @@ const Wrapper = styled.div `
   box-sizing: border-box;
   z-index: 4;
   // border-radius: 5%;
+  padding: 5px 10px;
 `
 const ResetButton = styled.button`
   position: absolute;
@@ -63,25 +65,27 @@ export default function LabelFilter() {
 
   return (
     <Wrapper>      
-      <ResetButton onClick={handleReset}>Reset</ResetButton>
-
+    
       <ToggleFilterList label="Sentiment">
         {SentimentLabelList.map(label => (
           <LabelButton  key={label} title={label}/>
-        ))}
+          ))}
       </ToggleFilterList>
 
       <ToggleFilterList label="Dialog Act">
         {DaLabelList.map(label => (
           <LabelButton key={label} title={label}/>
-        ))}
+          ))}
       </ToggleFilterList>
 
       <ToggleFilterList label="Theme">
         {ThemeLabelList.map(label => (
           <LabelButton key={label} title={label}/>
-        ))}
+          ))}
       </ToggleFilterList>
+
+      <KeywordSearch label={"Keywords"}/>
+      <ResetButton onClick={handleReset}>Reset</ResetButton>
     </Wrapper>
   )
 }

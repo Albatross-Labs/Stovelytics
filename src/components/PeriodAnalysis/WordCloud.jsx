@@ -45,11 +45,11 @@ export default function WordCloud() {
 
   const keywordValueSet = {}
   for(const comment of comments){
-    console.log(comment)
+    // console.log(comment)
     for(const keywordValue of comment.keywords){
       const key = keywordValue[0]
       const value = keywordValue[1]
-      console.log(key, value)
+      // console.log(key, value)
       if(!(key in keywordValueSet))
         keywordValueSet[key] = 0
       keywordValueSet[key] += Number(value)
@@ -86,7 +86,7 @@ export default function WordCloud() {
             'rgb(0, 200, 147)',
             'rgb(87, 228, 221)' 
           ],
-          fontSizes: [6, 42],
+          fontSizes: [8, 42],
           padding: 1,
           rotations: 3,
           rotationAngles: [0, 90],
