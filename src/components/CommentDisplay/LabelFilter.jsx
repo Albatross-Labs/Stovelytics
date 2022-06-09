@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components';
 import { CommentsContext } from '../../contexts/CommentsContext';
+import { KeywordProvider } from '../../contexts/KeywordContext';
 import { PeriodContext } from '../../contexts/PeriodContext';
 import KeywordSearch from './LabelFilter/KeywordSearch';
 
@@ -47,10 +48,10 @@ export default function LabelFilter() {
   
   const [period, setPeriod] = useContext(PeriodContext)
   const [comments, setComments] = useContext(CommentsContext)
+  const [keywords, setKeywords] = useState([])
 
   const handleReset = () => {
     const activeEls = document.getElementsByClassName('active')
-    
     const list = []
     for(const activeEl of activeEls)
       list.push(activeEl)
@@ -61,31 +62,34 @@ export default function LabelFilter() {
     }
 
     setComments(period)
+    setKeywords([])
   }
 
   return (
-    <Wrapper>      
-    
-      <ToggleFilterList label="Sentiment">
-        {SentimentLabelList.map(label => (
-          <LabelButton  key={label} title={label}/>
-          ))}
-      </ToggleFilterList>
+    <KeywordProvider value={[keywords, setKeywords]}>
+      <Wrapper>      
+      
+        <ToggleFilterList label="Sentiment">
+          {SentimentLabelList.map(label => (
+            <LabelButton  key={label} title={label}/>
+            ))}
+        </ToggleFilterList>
 
-      <ToggleFilterList label="Dialog Act">
-        {DaLabelList.map(label => (
-          <LabelButton key={label} title={label}/>
-          ))}
-      </ToggleFilterList>
+        <ToggleFilterList label="Dialog Act">
+          {DaLabelList.map(label => (
+            <LabelButton key={label} title={label}/>
+            ))}
+        </ToggleFilterList>
 
-      <ToggleFilterList label="Theme">
-        {ThemeLabelList.map(label => (
-          <LabelButton key={label} title={label}/>
-          ))}
-      </ToggleFilterList>
+        <ToggleFilterList label="Theme">
+          {ThemeLabelList.map(label => (
+            <LabelButton key={label} title={label}/>
+            ))}
+        </ToggleFilterList>
 
-      <KeywordSearch label={"Keywords"}/>
-      <ResetButton onClick={handleReset}>Reset</ResetButton>
-    </Wrapper>
+        <KeywordSearch label={"Keywords"}/>
+        <ResetButton onClick={handleReset}>Reset</ResetButton>
+      </Wrapper>
+    </KeywordProvider>
   )
 }

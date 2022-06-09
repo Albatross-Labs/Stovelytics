@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 
 import { CommentsContext } from '../../../contexts/CommentsContext';
+import { KeywordContext } from '../../../contexts/KeywordContext';
 import { PeriodContext } from '../../../contexts/PeriodContext';
 
 const Button = styled.button`
@@ -104,6 +105,7 @@ export default function LabelButton({onClick, title}) {
   const [active, setActive] = useState(false);
   const [comments, setComments] = useContext(CommentsContext)
   const [period, setPeriod] = useContext(PeriodContext)
+  const [keywords, setKeywords] = useContext(KeywordContext)
 
   const handleSet = () => {
     const activeSentimentLabels = [];
@@ -127,10 +129,16 @@ export default function LabelButton({onClick, title}) {
     }
 
     setComments(period.filter((comment) => {
+      var flag = true
+      for(const keyword of keywords){
+        if(!comment['header'].includes(keyword) && !comment['content'].includes(keyword))
+          flag = false
+      }
       return ( 
         (activeSentimentLabels.length === 0 || activeSentimentLabels.includes(comment['sentiment'])) &&
         (activeThemeLabels.length === 0 || activeThemeLabels.includes(comment['theme'])) &&
-        (activeDaLabels.length === 0 || activeDaLabels.includes(comment['da']))
+        (activeDaLabels.length === 0 || activeDaLabels.includes(comment['da'])) &&
+        flag
       )
     }))
   }
