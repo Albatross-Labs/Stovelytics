@@ -89,6 +89,9 @@ const Title = styled.div`
   width: 80px;
   margin: 10px;
   text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: 'Nanum Gothic', sans-serif;
 `
 
 const Icon = styled(FontAwesomeIcon)`
@@ -97,7 +100,7 @@ const Icon = styled(FontAwesomeIcon)`
 
 const Count = styled.div`
   font-weight: 600;
-
+  
 `
 
 export default function IconWithCount({task, label}) {
@@ -112,7 +115,7 @@ export default function IconWithCount({task, label}) {
   
   return (
     <Wrapper label={label.name}>
-      <Icon icon={faCoffee} />
+      {/* <Icon icon={faCoffee} /> */}
       <Title>{label.name}</Title>
       <Count>{count}</Count>
     </Wrapper>

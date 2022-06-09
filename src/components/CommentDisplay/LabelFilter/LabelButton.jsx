@@ -14,6 +14,7 @@ const Button = styled.button`
 
   background-color: #F0F0F0;
   color: #000000;
+  font-family: 'Nanum Gothic', sans-serif;
 
   &.active {
     color: #3f3f3f;

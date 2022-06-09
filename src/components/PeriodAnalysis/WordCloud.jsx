@@ -37,7 +37,7 @@ const WcWrapper =styled.div`
   right: 1%;;
   background: rgb(223,223,223);
   background: radial-gradient(circle, rgba(223,223,223,1) 0%, rgba(255,255,255,1) 100%);
-  border-radius: 50%;
+  // border-radius: 30%;
   `
 
 export default function WordCloud() {
@@ -70,7 +70,9 @@ export default function WordCloud() {
       <Title>Wordcloud</Title>
       <WcWrapper>
         <ReactWordcloud words={dataList} options={{
-          fontFamily: "Rockwell",
+          // fontFamily: "Rockwell",
+          fontFamily: 'Nanum Gothic',
+
           colors: [
             'rgb(109, 89, 106)',
             'rgb(109, 89, 106)',
@@ -86,7 +88,7 @@ export default function WordCloud() {
             'rgb(0, 200, 147)',
             'rgb(87, 228, 221)' 
           ],
-          fontSizes: [8, 42],
+          fontSizes: [8, 52],
           padding: 1,
           rotations: 3,
           rotationAngles: [0, 90],

@@ -2,15 +2,19 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Wrapper = styled.div `
-  border: 2px solid #2f3542;
+  border: 3px solid #2f3542;
   margin: 8px;
   padding-left: 18px;
   padding-right: 14px;
   overflow: hidden;
   border-radius: 10px;
   // background-color: #f2f2f2;
+  // background: rgb(255,255,255);
+  // background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(233,233,233,1) 100%);
   color: #3f3f3f;
   font-family: Rockwell;
+  font-family: 'Nanum Gothic', sans-serif;
+
 `
 
 const Header = styled.p`
@@ -21,14 +25,18 @@ const Header = styled.p`
 
 const Created = styled.p`
   text-align: right;
+  font-size: 15px;
   padding-right: 12px;
   margin-top: 18px;
+  font-weight: 600;
 `
 
 const User = styled.p`
   text-align: right;
+  font-size: 15px;
   padding-right: 12px;
   margin-bottom: 22px;
+  font-weight: 600;
 `
 
 const ClassWrapper = styled.div`

@@ -12,6 +12,7 @@ const Positioner = styled.div`
 const Wrapper = styled.div`
   position: relative;
   padding-bottom: 2px;
+  font-family: 'Nanum Gothic', sans-serif;
 
 `
 
