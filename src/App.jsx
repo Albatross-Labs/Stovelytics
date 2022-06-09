@@ -54,16 +54,16 @@ export default function App() {
   }
 
   useEffect(()=>{
-    fetchComments();
+    // fetchComments();
 
     // local에서 임시로 json 데이터 활용하기
-    // fetchData.sort(function(a,b){
-    //   return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; 
-    // })
+    fetchData.sort(function(a,b){
+      return a.key < b.key ? -1 : a.key > b.key ? 1 : 0; 
+    })
     
-    // setCache(fetchData)
-    // setPeriod(fetchData)
-    // setComments(fetchData)
+    setCache(fetchData)
+    setPeriod(fetchData)
+    setComments(fetchData)
   }, []);
 
   return (
