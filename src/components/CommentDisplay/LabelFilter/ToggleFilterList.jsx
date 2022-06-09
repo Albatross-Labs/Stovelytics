@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 const Label = styled.div`
   font-weight: 700;
   color: #000000;
-
+  font-family: Rockwell;
   padding: 2px;
 `
 

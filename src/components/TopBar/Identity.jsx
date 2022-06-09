@@ -32,7 +32,7 @@ const Sitename = styled.div`
   align-items: center;
   top: 9%;
   font-size: 4em;
-  font-family: 'Rockwell'
+  font-family: 'Rockwell';
 `
 const Slogan = styled.div`
   position: absolute;

@@ -51,32 +51,34 @@ const IconWrapper = styled.div`
   }
 `
 
-const DaLabels = {
-  '질문': {
-    img: 'faCoffee',
-    cnt: 0
-  },
-  '의견': {
-    img: 'faCoffee',
-    cnt: 0
-  },
-  '건의': {
-    img: 'faCoffee',
-    cnt: 0
-  },
-  '정보': {
-    img: 'faCoffee',
-    cnt: 0
-  },
-  '일상': {
-    img: 'faCoffee',
-    cnt: 0
-  }
-}
+
 
 export default function DaCount() {
   const [period, setPeriod] = useContext(PeriodContext)
 
+  const DaLabels = {
+    '질문': {
+      img: 'faCoffee',
+      cnt: 0
+    },
+    '의견': {
+      img: 'faCoffee',
+      cnt: 0
+    },
+    '건의': {
+      img: 'faCoffee',
+      cnt: 0
+    },
+    '정보': {
+      img: 'faCoffee',
+      cnt: 0
+    },
+    '일상': {
+      img: 'faCoffee',
+      cnt: 0
+    }
+  }
+  
   for(const comment of period)
     DaLabels[comment.da].cnt++
   
@@ -93,7 +95,7 @@ export default function DaCount() {
 
   return (
     <Wrapper>
-      <Title>Da Count</Title>
+      <Title>DA Count</Title>
       <IconWrapper>
         {DaLabelList.map(label => (
           <IconWithCount task={'da'} label={label} key={label.name}></IconWithCount>

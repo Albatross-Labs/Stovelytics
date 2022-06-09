@@ -7,6 +7,8 @@ const Wrapper = styled.div`
   width: 95%;
   top: 2%;
   text-align: right;
+  font-family: Rockwell;
+
 `
 
 export default function DayHourRadio({selectedValue, ...rest}) {
