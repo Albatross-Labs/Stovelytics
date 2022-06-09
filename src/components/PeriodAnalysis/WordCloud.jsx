@@ -30,10 +30,10 @@ const Title = styled.div`
 `
 const WcWrapper =styled.div`
   position: absolute;
-  width: 90%;
-  height: 80%;
+  width: 97%;
+  height: 87%;
   // background-color: pink;
-  bottom: 8%;
+  bottom: 4%;
   right: 1%;;
   background: rgb(223,223,223);
   background: radial-gradient(circle, rgba(223,223,223,1) 0%, rgba(255,255,255,1) 100%);
@@ -69,7 +69,14 @@ export default function WordCloud() {
     <Wrapper>
       <Title>Wordcloud</Title>
       <WcWrapper>
-        <ReactWordcloud words={dataList} />
+        <ReactWordcloud words={dataList} options={{
+          fontFamily: "Rockwell",
+          colors: ["#3f3f3f", "#6d596a", "#ad707f", "#e69e7c", "#ffbd6d", "#8c564b"],
+          fontSizes: [6, 42],
+          padding: 1,
+          rotations: 3,
+          rotationAngles: [0, 90],
+        }}/>
       </WcWrapper>
     </Wrapper>
   )

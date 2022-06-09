@@ -93,7 +93,7 @@ export default function DaCount() {
 
   return (
     <Wrapper>
-      <Title>Da Count</Title>
+      <Title>DA Count</Title>
       <IconWrapper>
         {DaLabelList.map(label => (
           <IconWithCount task={'da'} label={label} key={label.name}></IconWithCount>

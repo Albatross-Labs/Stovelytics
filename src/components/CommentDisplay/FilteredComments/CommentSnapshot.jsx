@@ -8,14 +8,14 @@ const Wrapper = styled.div `
   overflow: hidden;
   border-radius: 4px;
   border-radius: 10px;
-  background-color: #676767;
-  color: white;
+  background-color: #f2f2f2;
+  color: #3f3f3f;
   font-family: Rockwell;
 `
 
 const Header = styled.p`
   font-weight: 700;
-
+  font0size: 20px;
 `
 
 export default function CommentSnapshot({comment}) {
